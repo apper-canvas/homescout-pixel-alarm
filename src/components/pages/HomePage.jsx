@@ -3,12 +3,12 @@ import { motion } from 'framer-motion';
 import SearchBar from '@/components/molecules/SearchBar';
 import FilterPanel from '@/components/molecules/FilterPanel';
 import PropertyGrid from '@/components/organisms/PropertyGrid';
+import PropertyMap from '@/components/organisms/PropertyMap';
 import Button from '@/components/atoms/Button';
 import ApperIcon from '@/components/ApperIcon';
 import { useProperties } from '@/hooks/useProperties';
 import { useSavedProperties } from '@/hooks/useSavedProperties';
 import { useFilters } from '@/hooks/useFilters';
-
 const HomePage = () => {
   const [viewMode, setViewMode] = useState('grid');
   const [sortBy, setSortBy] = useState('newest');
@@ -104,7 +104,7 @@ const HomePage = () => {
                 </div>
               </div>
               
-              <div className="flex items-center gap-4">
+<div className="flex items-center gap-4">
                 {/* View Mode Toggle */}
                 <div className="flex items-center bg-white rounded-lg shadow-sm p-1">
                   <button
@@ -127,6 +127,16 @@ const HomePage = () => {
                   >
                     <ApperIcon name="List" size={20} />
                   </button>
+                  <button
+                    onClick={() => setViewMode('map')}
+                    className={`p-2 rounded-md transition-all duration-200 ${
+                      viewMode === 'map' 
+                        ? 'bg-primary text-white shadow-sm' 
+                        : 'text-gray-600 hover:text-primary'
+                    }`}
+                  >
+                    <ApperIcon name="Map" size={20} />
+                  </button>
                 </div>
                 
                 {/* Sort Dropdown */}
@@ -142,16 +152,26 @@ const HomePage = () => {
                 </select>
               </div>
             </div>
-            
-            {/* Properties Grid */}
-            <PropertyGrid
-              properties={sortedProperties}
-              loading={loading}
-              error={error}
-              onFavorite={toggleFavorite}
-              onRetry={loadProperties}
-              onClearFilters={clearFilters}
-            />
+{/* Properties Display */}
+            {viewMode === 'map' ? (
+              <PropertyMap
+                properties={sortedProperties}
+                loading={loading}
+                error={error}
+                onFavorite={toggleFavorite}
+                onRetry={loadProperties}
+                onClearFilters={clearFilters}
+              />
+            ) : (
+              <PropertyGrid
+                properties={sortedProperties}
+                loading={loading}
+                error={error}
+                onFavorite={toggleFavorite}
+                onRetry={loadProperties}
+                onClearFilters={clearFilters}
+              />
+            )}
           </div>
         </div>
       </div>
