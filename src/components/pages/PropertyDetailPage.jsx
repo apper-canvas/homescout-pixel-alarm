@@ -5,10 +5,12 @@ import { toast } from 'react-toastify';
 import PropertyImageGallery from '@/components/molecules/PropertyImageGallery';
 import Button from '@/components/atoms/Button';
 import Badge from '@/components/atoms/Badge';
+import Input from '@/components/atoms/Input';
 import ApperIcon from '@/components/ApperIcon';
 import Loading from '@/components/ui/Loading';
 import Error from '@/components/ui/Error';
 import { propertyService } from '@/services/api/propertyService';
+import { contactService } from '@/services/api/contactService';
 import { useSavedProperties } from '@/hooks/useSavedProperties';
 import { formatPrice } from '@/utils/formatters';
 import NeighborhoodStats from '@/components/molecules/NeighborhoodStats';
@@ -20,9 +22,16 @@ const PropertyDetailPage = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [activeTab, setActiveTab] = useState('overview');
+  const [showContactModal, setShowContactModal] = useState(false);
+  const [contactLoading, setContactLoading] = useState(false);
+  const [contactForm, setContactForm] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: ''
+  });
   
   const { savedProperties, toggleFavorite } = useSavedProperties();
-  
   useEffect(() => {
     loadProperty();
   }, [id]);
@@ -46,8 +55,60 @@ const PropertyDetailPage = () => {
     toast.success(isFavorite ? 'Removed from favorites' : 'Added to favorites');
   };
   
-  const handleContact = () => {
-    toast.success('Contact form would open here');
+const handleContact = () => {
+    setShowContactModal(true);
+  };
+  
+  const handleCloseContactModal = () => {
+    setShowContactModal(false);
+    setContactForm({ name: '', email: '', phone: '', message: '' });
+  };
+  
+  const handleContactFormChange = (e) => {
+    const { name, value } = e.target;
+    setContactForm(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+  
+  const handleContactSubmit = async (e) => {
+    e.preventDefault();
+    
+    // Validation
+    if (!contactForm.name.trim() || !contactForm.email.trim() || !contactForm.message.trim()) {
+      toast.error('Please fill in all required fields');
+      return;
+    }
+    
+    if (!contactForm.email.includes('@')) {
+      toast.error('Please enter a valid email address');
+      return;
+    }
+    
+    try {
+      setContactLoading(true);
+      
+      const inquiryData = {
+        ...contactForm,
+        propertyId: property.Id,
+        propertyTitle: property.title,
+        propertyPrice: property.price,
+        inquiryType: 'property-contact',
+        timestamp: new Date().toISOString()
+      };
+      
+      const response = await contactService.sendPropertyInquiry(inquiryData);
+      
+      if (response.success) {
+        toast.success(response.message);
+        handleCloseContactModal();
+      }
+    } catch (error) {
+      toast.error(error.message || 'Failed to send inquiry. Please try again.');
+    } finally {
+      setContactLoading(false);
+    }
   };
   
   const handleScheduleTour = () => {
@@ -319,10 +380,130 @@ const PropertyDetailPage = () => {
                   </Button>
                 </div>
               </div>
-            </div>
+</div>
           </motion.div>
         </div>
       </div>
+      
+      {/* Contact Modal */}
+      {showContactModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.9 }}
+            className="bg-white rounded-xl shadow-2xl max-w-md w-full max-h-[90vh] overflow-y-auto"
+          >
+            <div className="p-6">
+              <div className="flex items-center justify-between mb-6">
+                <h2 className="text-2xl font-display font-bold text-gray-900">
+                  Contact Agent
+                </h2>
+                <button
+                  onClick={handleCloseContactModal}
+                  className="text-gray-400 hover:text-gray-600 transition-colors"
+                >
+                  <ApperIcon name="X" size={24} />
+                </button>
+              </div>
+              
+              <div className="mb-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
+                    <ApperIcon name="User" size={20} className="text-white" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900">Real Estate Agent</h3>
+                    <p className="text-sm text-gray-600">Licensed Professional</p>
+                  </div>
+                </div>
+                
+                <div className="bg-gray-50 rounded-lg p-4">
+                  <h4 className="font-medium text-gray-900 mb-2">Regarding Property:</h4>
+                  <p className="text-sm text-gray-700">{property?.title}</p>
+                  <p className="text-sm font-semibold text-primary">{formatPrice(property?.price)}</p>
+                </div>
+              </div>
+              
+              <form onSubmit={handleContactSubmit} className="space-y-4">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Full Name *
+                  </label>
+                  <Input
+                    type="text"
+                    name="name"
+                    value={contactForm.name}
+                    onChange={handleContactFormChange}
+                    placeholder="Enter your full name"
+                    required
+                  />
+                </div>
+                
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Email Address *
+                  </label>
+                  <Input
+                    type="email"
+                    name="email"
+                    value={contactForm.email}
+                    onChange={handleContactFormChange}
+                    placeholder="Enter your email address"
+                    required
+                  />
+                </div>
+                
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Phone Number
+                  </label>
+                  <Input
+                    type="tel"
+                    name="phone"
+                    value={contactForm.phone}
+                    onChange={handleContactFormChange}
+                    placeholder="Enter your phone number"
+                  />
+                </div>
+                
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Message *
+                  </label>
+                  <textarea
+                    name="message"
+                    value={contactForm.message}
+                    onChange={handleContactFormChange}
+                    rows={4}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors resize-none"
+                    placeholder="I'm interested in this property. Please contact me with more information."
+                  />
+                </div>
+                
+                <div className="flex gap-3 pt-4">
+                  <Button
+                    type="button"
+                    variant="outline"
+                    onClick={handleCloseContactModal}
+                    className="flex-1"
+                  >
+                    Cancel
+                  </Button>
+                  <Button
+                    type="submit"
+                    loading={contactLoading}
+                    className="flex-1"
+                    icon="Send"
+                  >
+                    Send Message
+                  </Button>
+                </div>
+              </form>
+            </div>
+          </motion.div>
+        </div>
+      )}
     </div>
   );
 };
