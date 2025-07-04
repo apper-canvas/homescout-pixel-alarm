@@ -11,6 +11,7 @@ import Error from '@/components/ui/Error';
 import { propertyService } from '@/services/api/propertyService';
 import { useSavedProperties } from '@/hooks/useSavedProperties';
 import { formatPrice } from '@/utils/formatters';
+import NeighborhoodStats from '@/components/molecules/NeighborhoodStats';
 
 const PropertyDetailPage = () => {
   const { id } = useParams();
@@ -253,6 +254,19 @@ const PropertyDetailPage = () => {
                 </div>
               )}
             </div>
+</motion.div>
+          
+          {/* Neighborhood Statistics */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="bg-white rounded-xl shadow-lg p-6 mb-6"
+          >
+            <h2 className="text-2xl font-display font-bold text-gray-900 mb-6">
+              Neighborhood Statistics
+            </h2>
+            <NeighborhoodStats propertyId={property.Id} />
           </motion.div>
         </div>
         
