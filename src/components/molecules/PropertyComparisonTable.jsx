@@ -87,23 +87,25 @@ const PropertyComparisonTable = ({ properties, onViewDetails }) => {
             icon="Bath"
             values={properties.map(p => p.bathrooms)}
           />
-          
-          <ComparisonRow
+<ComparisonRow
             label="Square Feet"
             icon="Square"
-            values={properties.map(p => p.squareFeet.toLocaleString())}
+            values={properties.map(p => p.squareFeet?.toLocaleString() || 'N/A')}
           />
           
           <ComparisonRow
             label="Year Built"
             icon="Calendar"
-            values={properties.map(p => p.yearBuilt)}
+            values={properties.map(p => p.yearBuilt || 'N/A')}
           />
           
           <ComparisonRow
-            label="Price/Sq Ft"
+label="Price/Sq Ft"
             icon="Calculator"
-            values={properties.map(p => formatPrice(Math.round(p.price / p.squareFeet)))}
+            values={properties.map(p => {
+              if (!p.squareFeet || p.squareFeet === 0) return 'N/A';
+              return formatPrice(Math.round(p.price / p.squareFeet));
+            })}
             highlight={true}
           />
         </div>
