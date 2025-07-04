@@ -1,0 +1,398 @@
+[
+  {
+    "Id": 1,
+    "title": "Stunning Modern Family Home",
+    "price": 675000,
+    "address": "123 Maple Street",
+    "city": "Austin",
+    "state": "TX",
+    "zipCode": "78701",
+    "propertyType": "House",
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "squareFeet": 2800,
+    "yearBuilt": 2018,
+    "description": "Beautiful modern home with open floor plan, gourmet kitchen, and spacious master suite. Perfect for families looking for comfort and style in a prime location.",
+    "images": [
+      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=800&h=600&fit=crop"
+    ],
+    "amenities": [
+      "Hardwood Floors",
+      "Granite Countertops",
+      "Stainless Steel Appliances",
+      "Walk-in Closet",
+      "Two-Car Garage",
+      "Backyard Patio"
+    ],
+    "coordinates": {
+      "lat": 30.2672,
+      "lng": -97.7431
+    },
+    "listingDate": "2024-01-15T00:00:00.000Z"
+  },
+  {
+    "Id": 2,
+    "title": "Luxury Downtown Condo",
+    "price": 450000,
+    "address": "456 Congress Avenue",
+    "city": "Austin",
+    "state": "TX",
+    "zipCode": "78701",
+    "propertyType": "Condo",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "squareFeet": 1200,
+    "yearBuilt": 2020,
+    "description": "Sleek downtown condo with floor-to-ceiling windows, premium finishes, and stunning city views. Located in the heart of Austin's vibrant downtown district.",
+    "images": [
+      "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1560448075-bb485b067938?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1560448204-61dc36dc98c8?w=800&h=600&fit=crop"
+    ],
+    "amenities": [
+      "City Views",
+      "Balcony",
+      "In-Unit Laundry",
+      "Fitness Center",
+      "Rooftop Pool",
+      "Concierge Service"
+    ],
+    "coordinates": {
+      "lat": 30.2711,
+      "lng": -97.7437
+    },
+    "listingDate": "2024-01-10T00:00:00.000Z"
+  },
+  {
+    "Id": 3,
+    "title": "Charming Victorian Townhouse",
+    "price": 580000,
+    "address": "789 Oak Hill Drive",
+    "city": "San Francisco",
+    "state": "CA",
+    "zipCode": "94102",
+    "propertyType": "Townhouse",
+    "bedrooms": 3,
+    "bathrooms": 2.5,
+    "squareFeet": 1900,
+    "yearBuilt": 1895,
+    "description": "Historic Victorian townhouse with original architectural details, updated kitchen, and private garden. A rare find in the heart of San Francisco.",
+    "images": [
+      "https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&h=600&fit=crop"
+    ],
+    "amenities": [
+      "Historic Details",
+      "Private Garden",
+      "Original Hardwood",
+      "Updated Kitchen",
+      "Bay Windows",
+      "Fireplace"
+    ],
+    "coordinates": {
+      "lat": 37.7749,
+      "lng": -122.4194
+    },
+    "listingDate": "2024-01-08T00:00:00.000Z"
+  },
+  {
+    "Id": 4,
+    "title": "Contemporary Apartment",
+    "price": 320000,
+    "address": "321 Pine Street",
+    "city": "Denver",
+    "state": "CO",
+    "zipCode": "80202",
+    "propertyType": "Apartment",
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "squareFeet": 850,
+    "yearBuilt": 2019,
+    "description": "Modern apartment with high-end finishes, in-unit laundry, and access to building amenities. Perfect for professionals or first-time buyers.",
+    "images": [
+      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&h=600&fit=crop"
+    ],
+    "amenities": [
+      "In-Unit Laundry",
+      "Stainless Appliances",
+      "Granite Counters",
+      "Fitness Center",
+      "Parking Space",
+      "Storage Unit"
+    ],
+    "coordinates": {
+      "lat": 39.7392,
+      "lng": -104.9903
+    },
+    "listingDate": "2024-01-12T00:00:00.000Z"
+  },
+  {
+    "Id": 5,
+    "title": "Spacious Family Estate",
+    "price": 890000,
+    "address": "654 Elm Avenue",
+    "city": "Nashville",
+    "state": "TN",
+    "zipCode": "37203",
+    "propertyType": "House",
+    "bedrooms": 5,
+    "bathrooms": 4,
+    "squareFeet": 3500,
+    "yearBuilt": 2015,
+    "description": "Expansive family home with open concept living, gourmet kitchen, and large backyard. Perfect for entertaining and family gatherings.",
+    "images": [
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&h=600&fit=crop"
+    ],
+    "amenities": [
+      "Open Floor Plan",
+      "Gourmet Kitchen",
+      "Master Suite",
+      "Large Backyard",
+      "Three-Car Garage",
+      "Home Office"
+    ],
+    "coordinates": {
+      "lat": 36.1627,
+      "lng": -86.7816
+    },
+    "listingDate": "2024-01-05T00:00:00.000Z"
+  },
+  {
+    "Id": 6,
+    "title": "Cozy Starter Home",
+    "price": 285000,
+    "address": "987 Birch Lane",
+    "city": "Portland",
+    "state": "OR",
+    "zipCode": "97205",
+    "propertyType": "House",
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "squareFeet": 1100,
+    "yearBuilt": 1950,
+    "description": "Charming starter home with character and potential. Features original hardwood floors and a large lot perfect for gardening.",
+    "images": [
+      "https://images.unsplash.com/photo-1519767703915-ae77392b4c96?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1519767703915-ae77392b4c96?w=800&h=600&fit=crop"
+    ],
+    "amenities": [
+      "Original Hardwood",
+      "Large Lot",
+      "Potential for Expansion",
+      "Quiet Neighborhood",
+      "Covered Porch",
+      "Detached Garage"
+    ],
+    "coordinates": {
+      "lat": 45.5152,
+      "lng": -122.6784
+    },
+    "listingDate": "2024-01-18T00:00:00.000Z"
+  },
+  {
+    "Id": 7,
+    "title": "Modern Minimalist Condo",
+    "price": 520000,
+    "address": "147 Lake Shore Drive",
+    "city": "Chicago",
+    "state": "IL",
+    "zipCode": "60611",
+    "propertyType": "Condo",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "squareFeet": 1400,
+    "yearBuilt": 2021,
+    "description": "Sleek, modern condo with lake views and premium finishes throughout. Located in a luxury building with top-tier amenities.",
+    "images": [
+      "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&h=600&fit=crop"
+    ],
+    "amenities": [
+      "Lake Views",
+      "Floor-to-Ceiling Windows",
+      "Premium Finishes",
+      "Gym",
+      "Doorman",
+      "Valet Parking"
+    ],
+    "coordinates": {
+      "lat": 41.8781,
+      "lng": -87.6298
+    },
+    "listingDate": "2024-01-07T00:00:00.000Z"
+  },
+  {
+    "Id": 8,
+    "title": "Suburban Dream Home",
+    "price": 425000,
+    "address": "258 Sunset Boulevard",
+    "city": "Phoenix",
+    "state": "AZ",
+    "zipCode": "85001",
+    "propertyType": "House",
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "squareFeet": 2200,
+    "yearBuilt": 2012,
+    "description": "Perfect suburban home with desert landscaping and energy-efficient features. Great for families seeking comfort and convenience.",
+    "images": [
+      "https://images.unsplash.com/photo-1572120360610-d971b9d7767c?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=800&h=600&fit=crop"
+    ],
+    "amenities": [
+      "Desert Landscaping",
+      "Energy Efficient",
+      "Two-Car Garage",
+      "Covered Patio",
+      "Kitchen Island",
+      "Walk-in Pantry"
+    ],
+    "coordinates": {
+      "lat": 33.4484,
+      "lng": -112.0740
+    },
+    "listingDate": "2024-01-14T00:00:00.000Z"
+  },
+  {
+    "Id": 9,
+    "title": "Historic Brownstone",
+    "price": 750000,
+    "address": "369 Beacon Street",
+    "city": "Boston",
+    "state": "MA",
+    "zipCode": "02116",
+    "propertyType": "Townhouse",
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "squareFeet": 2400,
+    "yearBuilt": 1880,
+    "description": "Beautiful historic brownstone with original details and modern updates. Located in prestigious Back Bay neighborhood.",
+    "images": [
+      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop"
+    ],
+    "amenities": [
+      "Historic Character",
+      "Original Details",
+      "Modern Updates",
+      "Prestigious Location",
+      "Fireplace",
+      "Roof Deck"
+    ],
+    "coordinates": {
+      "lat": 42.3601,
+      "lng": -71.0589
+    },
+    "listingDate": "2024-01-03T00:00:00.000Z"
+  },
+  {
+    "Id": 10,
+    "title": "Beachfront Condo",
+    "price": 680000,
+    "address": "741 Ocean Drive",
+    "city": "Miami",
+    "state": "FL",
+    "zipCode": "33139",
+    "propertyType": "Condo",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "squareFeet": 1300,
+    "yearBuilt": 2017,
+    "description": "Stunning beachfront condo with panoramic ocean views and resort-style amenities. Wake up to the sound of waves every morning.",
+    "images": [
+      "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1613977257363-707ba9348227?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1613977257592-4871e5fcd7c4?w=800&h=600&fit=crop"
+    ],
+    "amenities": [
+      "Ocean Views",
+      "Beach Access",
+      "Resort Amenities",
+      "Infinity Pool",
+      "Spa",
+      "Beachfront Dining"
+    ],
+    "coordinates": {
+      "lat": 25.7617,
+      "lng": -80.1918
+    },
+    "listingDate": "2024-01-20T00:00:00.000Z"
+  },
+  {
+    "Id": 11,
+    "title": "Mountain View Retreat",
+    "price": 565000,
+    "address": "852 Alpine Way",
+    "city": "Boulder",
+    "state": "CO",
+    "zipCode": "80301",
+    "propertyType": "House",
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "squareFeet": 1800,
+    "yearBuilt": 2010,
+    "description": "Peaceful mountain retreat with stunning views and outdoor living spaces. Perfect for nature lovers and outdoor enthusiasts.",
+    "images": [
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&h=600&fit=crop"
+    ],
+    "amenities": [
+      "Mountain Views",
+      "Outdoor Living",
+      "Hiking Trails",
+      "Vaulted Ceilings",
+      "Stone Fireplace",
+      "Deck"
+    ],
+    "coordinates": {
+      "lat": 40.0150,
+      "lng": -105.2705
+    },
+    "listingDate": "2024-01-09T00:00:00.000Z"
+  },
+  {
+    "Id": 12,
+    "title": "Urban Loft",
+    "price": 395000,
+    "address": "963 Industrial Street",
+    "city": "Seattle",
+    "state": "WA",
+    "zipCode": "98101",
+    "propertyType": "Apartment",
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "squareFeet": 950,
+    "yearBuilt": 2005,
+    "description": "Converted industrial loft with exposed brick, high ceilings, and modern amenities. Located in trendy Capitol Hill neighborhood.",
+    "images": [
+      "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1560448075-bb485b067938?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1560448204-61dc36dc98c8?w=800&h=600&fit=crop"
+    ],
+    "amenities": [
+      "Exposed Brick",
+      "High Ceilings",
+      "Industrial Design",
+      "Trendy Location",
+      "Parking",
+      "Pet Friendly"
+    ],
+    "coordinates": {
+      "lat": 47.6062,
+      "lng": -122.3321
+    },
+    "listingDate": "2024-01-16T00:00:00.000Z"
+  }
+]
