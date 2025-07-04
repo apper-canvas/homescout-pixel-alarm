@@ -6,6 +6,7 @@ import Badge from '@/components/atoms/Badge';
 import ApperIcon from '@/components/ApperIcon';
 import Empty from '@/components/ui/Empty';
 import Loading from '@/components/ui/Loading';
+import PropertyComparisonTable from '@/components/molecules/PropertyComparisonTable';
 import { useSavedProperties } from '@/hooks/useSavedProperties';
 import { propertyService } from '@/services/api/propertyService';
 import { formatPrice } from '@/utils/formatters';
@@ -52,23 +53,11 @@ const ComparePage = () => {
     } else {
       toast.warning('You can compare up to 3 properties at a time');
     }
-  };
+};
   
-  const ComparisonAttribute = ({ label, values, icon }) => (
-    <div className="border-b border-gray-200 py-4">
-      <div className="flex items-center gap-2 mb-2">
-        <ApperIcon name={icon} size={18} className="text-primary" />
-        <span className="font-medium text-gray-900">{label}</span>
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {values.map((value, index) => (
-          <div key={index} className="text-center p-2 bg-gray-50 rounded-lg">
-            <span className="font-semibold text-gray-900">{value}</span>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
+  const handleViewDetails = (propertyId) => {
+    window.location.href = `/property/${propertyId}`;
+  };
   
   if (loading) {
     return <Loading />;
@@ -180,85 +169,12 @@ const ComparePage = () => {
         </div>
       </motion.div>
       
-      {/* Comparison Table */}
+{/* Comparison Table */}
       {selectedProperties.length >= 2 && (
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-          className="bg-white rounded-xl shadow-lg p-6"
-        >
-          <h2 className="text-xl font-display font-semibold mb-6">Property Comparison</h2>
-          
-          {/* Property Headers */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
-            {selectedProperties.map(property => (
-              <div key={property.Id} className="text-center">
-                <img
-                  src={property.images[0]}
-                  alt={property.title}
-                  className="w-full h-40 object-cover rounded-lg mb-3"
-                />
-                <h3 className="font-display font-semibold text-lg mb-1">{property.title}</h3>
-                <p className="text-gray-600 text-sm mb-2">{property.city}, {property.state}</p>
-                <Badge variant="primary">{property.propertyType}</Badge>
-              </div>
-            ))}
-          </div>
-          
-          {/* Comparison Attributes */}
-          <div className="space-y-4">
-            <ComparisonAttribute
-              label="Price"
-              icon="DollarSign"
-              values={selectedProperties.map(p => formatPrice(p.price))}
-            />
-            
-            <ComparisonAttribute
-              label="Bedrooms"
-              icon="Bed"
-              values={selectedProperties.map(p => p.bedrooms)}
-            />
-            
-            <ComparisonAttribute
-              label="Bathrooms"
-              icon="Bath"
-              values={selectedProperties.map(p => p.bathrooms)}
-            />
-            
-            <ComparisonAttribute
-              label="Square Feet"
-              icon="Square"
-              values={selectedProperties.map(p => p.squareFeet.toLocaleString())}
-            />
-            
-            <ComparisonAttribute
-              label="Year Built"
-              icon="Calendar"
-              values={selectedProperties.map(p => p.yearBuilt)}
-            />
-            
-            <ComparisonAttribute
-              label="Price per Sq Ft"
-              icon="Calculator"
-              values={selectedProperties.map(p => formatPrice(Math.round(p.price / p.squareFeet)))}
-            />
-          </div>
-          
-          {/* Action Buttons */}
-          <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-            {selectedProperties.map(property => (
-              <Button
-                key={property.Id}
-                onClick={() => window.location.href = `/property/${property.Id}`}
-                variant="outline"
-                className="flex-1"
-              >
-                View Details
-              </Button>
-            ))}
-          </div>
-        </motion.div>
+        <PropertyComparisonTable
+          properties={selectedProperties}
+          onViewDetails={handleViewDetails}
+        />
       )}
     </div>
   );

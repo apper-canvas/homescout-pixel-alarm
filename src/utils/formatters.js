@@ -35,3 +35,10 @@ export const formatAddress = (address, city, state, zipCode) => {
   const parts = [address, city, state, zipCode].filter(Boolean);
   return parts.join(', ');
 };
+
+export const formatLocation = (city, state) => {
+  if (!city && !state) return '';
+  if (!city) return state;
+  if (!state) return city;
+  return `${city}, ${state}`;
+};
