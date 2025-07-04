@@ -168,7 +168,7 @@
     "Id": 6,
     "title": "Cozy Starter Home",
     "price": 285000,
-    "address": "987 Birch Lane",
+"address": "987 Birch Lane",
     "city": "Portland",
     "state": "OR",
     "zipCode": "97205",
@@ -179,9 +179,9 @@
     "yearBuilt": 1950,
     "description": "Charming starter home with character and potential. Features original hardwood floors and a large lot perfect for gardening.",
     "images": [
-      "https://images.unsplash.com/photo-1519767703915-ae77392b4c96?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1519767703915-ae77392b4c96?w=800&h=600&fit=crop"
+      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=600&fit=crop"
     ],
     "amenities": [
       "Original Hardwood",
